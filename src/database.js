@@ -8,10 +8,10 @@ const modeloUbicacion = require('./models/ubicacion')
 
 //Conexion DB
 mongoose.connect("mongodb+srv://oscar:427568@cluster0.jyurt.mongodb.net/Inmobiliaria?retryWrites=true&w=majority", {
-  //  useCreateIndex: true,
-    useNewUrlParser: true,
-   // useUnifiedTopology,
-   // useFindAndModify: false
+  //useCreateIndex: true,
+  useNewUrlParser: true,
+  // useUnifiedTopology,
+  // useFindAndModify: false
 })
 .then(db => console.log('DB is connect'))
 .catch(err => console.error(err));
