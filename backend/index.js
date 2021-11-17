@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDb = require('./config/db');
+const bodyParser = require('body-parser');
 
 //Crear el servidor
 const app = express();
@@ -7,7 +8,10 @@ const app = express();
 //Conectar a la DB
 connectDb();
 
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ 
+    extended: true 
+ }));
 app.use('/persona', require('./routes/persona'));
 
 
