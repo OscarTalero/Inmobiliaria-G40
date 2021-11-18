@@ -7,5 +7,7 @@ const personaController = require('../controllers/personaController');
 router.post('/', personaController.crearPersona);
 router.get('/', personaController.obtenerPersonas);
 router.put('/:id', personaController.actualizarPersonas);
+router.get('/:id', personaController.obtenerPersona);
+router.delete('/:id', personaController.eliminarPersona);
 
 module.exports = router;

@@ -53,3 +53,36 @@ exports.actualizarPersonas = async (req, res) => {
 
 
 }
+
+exports.obtenerPersona = async (req, res) => {
+    try {
+        let persona = await Persona.findById(req.params.id);
+
+        if(!persona) {
+            res.status(404).json({ msg: 'No existe la persona' })
+        }
+
+        res.json(persona);
+
+    } catch(error){
+        console.log(error);
+        res.status(500).send('Error al obtener la Persona');
+    }
+}
+
+exports.eliminarPersona = async (req, res) => {
+    try {
+        let persona = await Persona.findById(req.params.id);
+
+        if(!persona) {
+            res.status(404).json({ msg: 'No existe la persona' })
+        }
+
+        await Persona.findOneAndRemove({ _id: req.params.id })
+        res.json({ msg: 'Persona eliminada con exito'});
+
+    } catch(error){
+        console.log(error);
+        res.status(500).send('Error al eliminar la Persona');
+    }
+}
