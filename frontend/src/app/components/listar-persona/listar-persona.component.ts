@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Persona } from 'src/app/models/persona';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-listar-persona',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarPersonaComponent implements OnInit {
 
-  constructor() { }
+  listPersonas: Persona[] = [];
+
+  constructor(private _personaService: PersonaService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  obtenerPersonas() {
+    this._personaService.getPersonas().subscribe(data => {
+      console.log(data);
+      this.listPersonas = data;
+    }, error => {
+      console.log(error);
+    })
   }
 
 }

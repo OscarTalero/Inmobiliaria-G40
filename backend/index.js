@@ -15,6 +15,6 @@ app.use(bodyParser.urlencoded({
 app.use('/persona', require('./routes/persona'));
 
 
-app.listen(4000, () => {
+app.listen(3000, () => {
     console.log('Servidor corriendo correctamente')
 })
