@@ -3,17 +3,17 @@ const path = require('path');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
 const methodOverride = require('method-override');
-
+const connectDb = require('./config/db');
 
 
 //Initializations
 const app = express();
-require('./database');
 
-//Settings
-app.set('port', process.env.PORT || 3001);
+//Settings 
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs', engine ({
+   // partialsDir: path.join(app('get-views')),
     extname: '.hbs'
     }));
 app.set('view engine', '.hbs');
@@ -36,25 +36,6 @@ app.use(require('./routes/persona'));
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-/*
-//Server
-app.get("/", function(req,res){
-    res.render("index");
-})
-
-app.post("/addname", (req, res) => {
-    var myData = new User(req.body);
-    myData.save()
-    .then(item => {
-    res.send("item saved to database");
-    })
-    .catch(err => {
-    res.status(400).send("unable to save to database");
-    });
-   });
-
-*/
 
 
 app.listen(app.get('port'), () => {

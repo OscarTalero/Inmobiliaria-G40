@@ -5,10 +5,4 @@ router.get('/', (req, res) => {
 });
 
 
-/*
-router.get('/persona', (req, res) => {
-    res.render('persona');
-});
-*/
-
 module.exports = router;
