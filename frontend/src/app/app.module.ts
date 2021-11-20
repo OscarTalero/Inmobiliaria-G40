@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CrearPersonaComponent } from './components/crear-persona/crear-persona.component';
 import { ListarPersonaComponent } from './components/listar-persona/listar-persona.component';
+//import { PersonaService } from './services/persona.service';
 
 @NgModule({
   declarations: [
