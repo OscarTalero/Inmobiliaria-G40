@@ -9,14 +9,16 @@ import { PersonaService } from 'src/app/services/persona.service';
   styleUrls: ['./listar-persona.component.css']
 })
 export class ListarPersonaComponent implements OnInit {
-
   listPersonas: Persona[] = [];
 
   constructor(private _personaService: PersonaService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.obtenerPersonas;
   }
+
+
 
   obtenerPersonas() {
     this._personaService.getPersonas().subscribe(data => {
