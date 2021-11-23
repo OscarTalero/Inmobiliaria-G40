@@ -21,11 +21,18 @@ export class ListarPersonaComponent implements OnInit {
 
   obtenerPersonas() {
     this._personaService.getPersonas().subscribe(data => {
-      console.log(data);
       this.listPersonas = data;
     }, error => {
       console.log(error);
     })
   }
 
+  eliminarPersona(id: any){
+    this._personaService.eliminarPersona(id).subscribe(data => {
+      this.toastr.error('La persona fue eliminada correctamente', 'Persona Eliminada');
+      this.obtenerPersonas();
+    }, error => {
+      console.log(error);
+    })
+  }
 }
