@@ -10,4 +10,3 @@ export class Persona {
     this.telefono = telefono;
   }
 }
-
