@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo"> {{ titulo | uppercase }}</span>
+          <form class="mb-3" [formGroup]="personaForms" (ngSubmit)="adicionarPersona()">
+
+            <div class="mb-3">
+              <input type="text" formControlName="nombre" class="form-control"
+                id="nombre" placeholder="Nombre">
+              <div class="text-danger"
+                *ngIf="personaForms.get('nombre')?.hasError('required') && personaForms.get('nombre')?.touched">
+                  <span>El nombre de la persona <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="email" formControlName="correo" class="form-control"
+                id="correo" placeholder="Correo">
+              <div class="text-danger"
+                *ngIf="personaForms.get('correo')?.hasError('required') && personaForms.get('correo')?.touched">
+                  <span>El correo de la persona <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" formControlName="telefono" class="form-control"
+                id="telefono" placeholder="Telefono">
+              <div class="text-danger"
+                *ngIf="personaForms.get('telefono')?.hasError('required') && personaForms.get('telefono')?.touched">
+                  <span>El telefono de la persona <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-secondary btn-lg float-start" routerLink="/">VOLVER</button>
+              <button type="submit" [disabled]="personaForms.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>>

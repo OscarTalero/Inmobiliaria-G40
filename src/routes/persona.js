@@ -15,4 +15,10 @@ router.post('/newperson', async (req, res) => {
     res.send('Registro guardado exitosamente');
 });
 
+router.get('/personas', async (req, res) => {
+    const personas = await Persona.find();
+    console.log(personas);
+    res.render('personas', { personas });
+})
+
 module.exports = router;

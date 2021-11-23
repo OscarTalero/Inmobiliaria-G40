@@ -1,4 +1,4 @@
-<div class="col-md-4 mx-auto">
+<div class="col-md-5 mx-auto">
 
 <div class="card">
     <div class="card-header">
@@ -6,19 +6,21 @@
     </div>
     <div class="card-body">
         <form action="/newperson" method="POST">
-            <div>
+            <div class="mb-4">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" required autofocus> 
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="correo" class="form-label">Email</label>
                 <input type="email" class="form-control" id="correo" name="correo" required>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="telefono" class="form-label">Telefono</label>
                 <input type="text" class="form-control" id="telefono" name="telefono"  required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+            </div >
+            <div class="mb-3"></div>
+                <button type="submit" class="btn btn-primary btn-block float-end">Registrar</button>
+            </div >
         </form>
     </div>
 </div>

@@ -8,6 +8,7 @@ const connectDb = require('./config/db');
 
 //Initializations
 const app = express();
+connectDb();
 
 //Settings 
 app.set('port', process.env.PORT || 3000);
@@ -30,6 +31,9 @@ app.use(express.urlencoded({extended: true}));
 //Routes
 app.use(require('./routes/index'));
 app.use(require('./routes/persona'));
+app.use(require('./routes/inmueble'));
+app.use(require('./routes/ubicacion'));
+
 
 
 

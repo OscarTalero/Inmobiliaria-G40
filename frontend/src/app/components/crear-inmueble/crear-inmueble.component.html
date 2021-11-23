@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo"> {{ titulo | uppercase }}</span>
+          <form class="mb-3" [formGroup]="inmuebleForms" (ngSubmit)="adicionarInmueble()">
+
+            <div class="mb-3">
+              <input type="text" formControlName="tipo" class="form-control"
+                id="tipo" placeholder="Tipo">
+              <div class="text-danger"
+                *ngIf="inmuebleForms.get('tipo')?.hasError('required') && inmuebleForms.get('tipo')?.touched">
+                  <span>El tipo del inmueble <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" formControlName="precio" class="form-control"
+                id="precio" placeholder="Precio">
+              <div class="text-danger"
+                *ngIf="inmuebleForms.get('precio')?.hasError('required') && inmuebleForms.get('precio')?.touched">
+                  <span>El precio de la inmueble <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" formControlName="descripcion" class="form-control"
+                id="descripcion" placeholder="Descripcion">
+              <div class="text-danger"
+                *ngIf="inmuebleForms.get('descripcion')?.hasError('required') && inmuebleForms.get('descripcion')?.touched">
+                  <span>El descripcion del inmueble <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" formControlName="ubicacion" class="form-control"
+                id="ubicacion" placeholder="Ubicacion">
+              <div class="text-danger"
+                *ngIf="inmuebleForms.get('ubicacion')?.hasError('required') && inmuebleForms.get('ubicacion')?.touched">
+                  <span>El ubicacion del inmueble  <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-secondary btn-lg float-start" routerLink="/">VOLVER</button>
+              <button type="submit" [disabled]="inmuebleForms.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>>

@@ -1,2 +1,6 @@
 .env
+<<<<<<< HEAD
 /node_modules/
+=======
+node modules
+>>>>>>> 98431f768dddf481bf72a0e63074acd10510e50a
