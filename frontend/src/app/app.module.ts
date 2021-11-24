@@ -13,6 +13,8 @@ import { ListarPersonaComponent } from './components/listar-persona/listar-perso
 import { CrearInmuebleComponent } from './components/crear-inmueble/crear-inmueble.component';
 import { ListarInmuebleComponent } from './components/listar-inmueble/listar-inmueble.component';
 import { MainComponent } from './components/main/main.component';
+import { CrearUbicacionComponent } from './components/crear-ubicacion/crear-ubicacion.component';
+import { ListarUbicacionComponent } from './components/listar-ubicacion/listar-ubicacion.component';
 //import { PersonaService } from './services/persona.service';
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MainComponent } from './components/main/main.component';
     ListarPersonaComponent,
     CrearInmuebleComponent,
     ListarInmuebleComponent,
-    MainComponent
+    MainComponent,
+    CrearUbicacionComponent,
+    ListarUbicacionComponent
   ],
   imports: [
     BrowserModule,
